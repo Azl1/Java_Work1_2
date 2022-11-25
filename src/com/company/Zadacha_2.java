@@ -10,10 +10,10 @@ public class Zadacha_2 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите радиус окружности в сантиметрах:");
         int radius = sc.nextInt();
-        calculateCircleArea();
-        double area = calculateCircleArea();
-        calculateCircleLength();
-        double length = calculateCircleLength();
+        calculateCircleArea(10);
+        double area = calculateCircleArea(20);
+        calculateCircleLength(30);
+        double length = calculateCircleLength(50);
     //    double value2 = 3.14;
     //    double value3 = 62.8;
 
