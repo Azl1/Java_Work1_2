@@ -14,8 +14,7 @@ public class Zadacha_2 {
         double area = calculateCircleArea(radius);
         calculateCircleLength(radius);
         double length = calculateCircleLength(radius);
-    //    double value2 = 3.14;
-    //    double value3 = 62.8;
+
 
         System.out.println("Площадь круга: " + area +  " см.кв.");
         System.out.println("Длина окружности: " + length +  " см.");
