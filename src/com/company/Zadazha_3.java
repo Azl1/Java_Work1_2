@@ -15,7 +15,7 @@ public class Zadazha_3 {
             if(amountOfDays(inputYear, inputDay)) {
                 points++;
             } else {
-                System.out.println("Неправильно! В этом году 365 дней!");
+                System.out.println("Неправильно! ");
                 System.out.println("Набрано очков " + points);
                 break;
             }
@@ -26,10 +26,13 @@ public class Zadazha_3 {
         int day = 0;
         if (inputYear % 400 == 0) {
             day = 366;
+            System.out.println("Результат вычисления " + day);
         } else if (inputYear % 4 == 0 && inputYear % 100 != 0) {
             day = 366;
+            System.out.println("Результат вычисления " + day);
         } else {
             day = 365;
+            System.out.println("Результат вычисления " + day);
         }
         return day == inputDay;
     }
