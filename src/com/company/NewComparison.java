@@ -9,9 +9,9 @@ public class NewComparison {
 
         while (true) {
             System.out.println("Выберите операцию над double/float");
-            System.out.println("Сравнить");
-            System.out.println("Округлить");
-            System.out.println("Отбросить дробную часть");
+            System.out.println("1. Сравнить");
+            System.out.println("2. Округлить");
+            System.out.println("3. Отбросить дробную часть");
             System.out.println("Выберите операцию : ");
             System.out.println();
 
@@ -25,14 +25,15 @@ public class NewComparison {
                     if (number1 == number2){
                         System.out.println("Числа равны ");
                         System.out.println();
-                    }
+                    } else {
                         System.out.println("Числа не равны ");
                         System.out.println();
+                    }
                     break;
                 case 2:
                     System.out.println("Введите первое число ");
                     double value = scanner.nextDouble();
-                    double result = Math.round(value);
+                    int result = (int) Math.round(value);
                     System.out.println(result);
                     System.out.println();
                     break;
