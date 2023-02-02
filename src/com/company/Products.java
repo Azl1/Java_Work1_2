@@ -8,7 +8,7 @@ public class Products {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] countProducts = new int[3];
-        String[] products = {"Хлеб", "Яблоки", "Молоко"};
+        String[] products = {"Молоко", "Хлеб", "Гречневая крупа"};
         int[] prices = {100, 200, 300};
 
         while (true){
@@ -22,8 +22,10 @@ public class Products {
                 System.out.println("Ваша корзина");
                 System.out.println("Наименование товара   Количество  Цена/за.ед  Общая стоимость ");
                 for (int i = 0; i < 3; i++) {
-                    String text = products[i] + " " + countProducts[i] + " " + prices[i] + " " + prices[i] * countProducts[i];
-                    System.out.println(text);
+                    if (countProducts[i] != 0) {
+                        String text = products[i] + " " + countProducts[i] + " " + prices[i] + " " + prices[i] * countProducts[i];
+                        System.out.println(text);
+                    }
                 }
                 System.out.println("Программа завершена");
                 break;
@@ -32,7 +34,7 @@ public class Products {
                 String[] inputMas = input.split(" ");
                 int numberProduct = Integer.parseInt(inputMas[0]);
                 int countProduct = Integer.parseInt(inputMas[1]);
-                countProducts[numberProduct - 1] = countProduct;
+                countProducts[numberProduct - 1] += countProduct;
             }
         }
     }
