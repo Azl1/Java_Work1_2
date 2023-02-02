@@ -7,10 +7,7 @@ public class Products {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int productNumber = 0;
-        int productCount = 0;
-        int sumProducts = 0;
-
+        int[] countProducts = new int[3];
         String[] products = {"Хлеб", "Яблоки", "Молоко"};
         int[] prices = {100, 200, 300};
 
@@ -21,26 +18,22 @@ public class Products {
             System.out.println("3. Гречневая крупа 80 руб/шт\n");
             System.out.println("Выберите товар и количество или введите `end`");
             String input = scanner.nextLine();
-            Integer.parseInt(input);
-            if ("end".equals(input) || sumProducts > 0){
+            if ("end".equals(input)){
+                System.out.println("Ваша корзина");
+                System.out.println("Наименование товара   Количество  Цена/за.ед  Общая стоимость ");
+                for (int i = 0; i < 3; i++) {
+                    String text = products[i] + " " + countProducts[i] + " " + prices[i] + " " + prices[i] * countProducts[i];
+                    System.out.println(text);
+                }
                 System.out.println("Программа завершена");
                 break;
             }
-
-            sumProducts=+1;
-
-            for (int i = 0; i < products.length; i++) {
-                System.out.println(Arrays.toString(products));
+            else {
+                String[] inputMas = input.split(" ");
+                int numberProduct = Integer.parseInt(inputMas[0]);
+                int countProduct = Integer.parseInt(inputMas[1]);
+                countProducts[numberProduct - 1] = countProduct;
             }
-            for (int i = 0; i < prices.length; i++) {
-                System.out.println(Arrays.toString(prices));
-            }
-
         }
-
-
     }
-
-
-
 }
