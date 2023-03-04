@@ -11,8 +11,8 @@ public class Matrix {
         random();
         print(colors);
         System.out.println();
-        for (int i = 0; i < 1; i++) {
-            rotated(colors);
+        for (int i = 0; i < 2; i++) {
+            rotated();
             System.out.println();
         }
        // System.out.println();
@@ -42,12 +42,13 @@ public class Matrix {
         }
     }
 
-    static public void rotated(int[][] colors) {
+    static public void rotated() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 rotatedColors[i][j] = colors[SIZE - 1 - j][i];
             }
         }
+        colors = rotatedColors; ;
             print(rotatedColors);
     }
 }
