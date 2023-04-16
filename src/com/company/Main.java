@@ -5,6 +5,21 @@ public class Main {
         Book book = new Book("The Lord of the Rings");
         BookMover fromAvailableStatusMover = new FromAvailableStatusMover();
         fromAvailableStatusMover.moveToStatus(book, Status.BORROWED);
-        System.out.println(book.getStatus());
+        System.out.println(book.getTitle() +" " + book.getStatus());
+        System.out.println();
+
+        BookMover fromArchievedStatusMover = new FromAvailableStatusMover();
+        fromArchievedStatusMover.moveToStatus(book, Status.AVAILABLE);
+        System.out.println(book.getTitle() +" " + book.getStatus());
+        System.out.println();
+
+        BookMover fromBorrovedStatusMover = new FromAvailableStatusMover();
+        fromBorrovedStatusMover.moveToStatus(book, Status.OVERDUED);
+        System.out.println(book.getTitle() +" " + book.getStatus());
+        System.out.println();
+
+        BookMover fromOverduedStatusMover = new FromAvailableStatusMover();
+        fromOverduedStatusMover.moveToStatus(book, Status.ARCHIVED);
+        System.out.println(book.getTitle() +" " + book.getStatus());
     }
 }
