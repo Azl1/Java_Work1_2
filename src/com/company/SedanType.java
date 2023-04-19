@@ -1,17 +1,9 @@
 package com.company;
 
-public class SedanType extends VehicleTypeByPurpose{
-
-    public SedanType(String attribute) {
-        super(attribute);
-    }
-
-    public SedanType() {
-
-    }
+public class SedanType extends VehicleTypeByBodyTypes{
 
     @Override
     public String getTypeName() {
-        return super.getTypeName();
+        return VehicleTypeEnum.SEDAN.name();
     }
 }

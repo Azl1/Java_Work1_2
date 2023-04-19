@@ -1,18 +1,23 @@
 package com.company;
 
 public class Main {
-    AdsService adsService = new AdsService();
-    VehicleAd volvoAd = new VehicleAd("Volvo", "123", new PassengerType(),
-            new SedanType(), new PetrolType());
-    VehicleAd kamazAd = new VehicleAd("Kamaz", "45", new TruckType(),
-            new PickupType(), new DieselType());
 
-    adsService.setAdList(new VehicleAd[] {volvoAd, kamazAd});
+    public static void main(String[] args) {
+        AdsService adsService = new AdsService();
+        VehicleAd volvoAd = new VehicleAd("Volvo", "123", new PassengerType(),
+                new SedanType(), new PetrolType());
+        VehicleAd kamazAd = new VehicleAd("Kamaz", "45", new TruckType(),
+                new PickupType(), new DieselType());
 
-    adsService.filterByVehicleTypeByPurpose(new PassengerType());
+        adsService.setAdList(new VehicleAd[] {volvoAd, kamazAd});
 
-    adsService.filterByVehicleTypeByPurpose(new TruckType());
+        adsService.filterByVehicleTypeByPurpose(new PassengerType());
 
-    //TODO Создайте объявление с типами CAR, SEDAN, PETROL и отфильтруйте объявления с бензиновым топливом
+        adsService.filterByVehicleTypeByPurpose(new TruckType());
+
+        //TODO Создайте объявление с типами CAR, SEDAN, PETROL и отфильтруйте объявления с бензиновым топливом
+
+    }
+
 
 }

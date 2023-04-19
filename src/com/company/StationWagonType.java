@@ -1,12 +1,9 @@
 package com.company;
 
-public class StationWagonType extends VehicleTypeByPurpose{
-    public StationWagonType(String attribute) {
-        super(attribute);
-    }
+public class StationWagonType extends VehicleTypeByBodyTypes{
 
     @Override
     public String getTypeName() {
-        return super.getTypeName();
+        return VehicleTypeEnum.WAGON.name();
     }
 }

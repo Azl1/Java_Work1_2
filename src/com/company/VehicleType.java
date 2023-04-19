@@ -8,9 +8,6 @@ public class VehicleType {
         this.attribute = attribute;
     }
 
-    public VehicleType() {
-
-    }
 
     public String getAttributeOfType() {
         return attribute;

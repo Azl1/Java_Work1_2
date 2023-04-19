@@ -1,12 +1,9 @@
 package com.company;
 
-public class BusType extends VehicleTypeByPurpose{
-    public BusType(String attribute) {
-        super(attribute);
-    }
+public class BusType extends VehicleTypeByBodyTypes{
 
     @Override
     public String getTypeName() {
-        return super.getTypeName();
+        return VehicleTypeEnum.BUS.name();
     }
 }

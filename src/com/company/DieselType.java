@@ -1,16 +1,9 @@
 package com.company;
 
-public class DieselType extends VehicleTypeByPurpose{
-    public DieselType(String attribute) {
-        super(attribute);
-    }
-
-    public DieselType() {
-
-    }
+public class DieselType extends VehicleTypeByFuelTypes{
 
     @Override
     public String getTypeName() {
-        return super.getTypeName();
+        return VehicleTypeEnum.DIESEL.name();
     }
 }

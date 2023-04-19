@@ -2,7 +2,7 @@ package com.company;
 
 public class VehicleTypeByFuelTypes extends VehicleType{
 
-    public VehicleTypeByFuelTypes(String attribute) {
+    public VehicleTypeByFuelTypes() {
         super("Vehicle type by By Fuel");
     }
 

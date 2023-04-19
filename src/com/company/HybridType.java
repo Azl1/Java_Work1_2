@@ -1,12 +1,9 @@
 package com.company;
 
-public class HybridType extends VehicleTypeByPurpose{
-    public HybridType(String attribute) {
-        super(attribute);
-    }
+public class HybridType extends VehicleTypeByFuelTypes{
 
     @Override
     public String getTypeName() {
-        return super.getTypeName();
+        return VehicleTypeEnum.HYBRID.name();
     }
 }

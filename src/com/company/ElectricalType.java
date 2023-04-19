@@ -1,12 +1,9 @@
 package com.company;
 
-public class ElectricalType extends VehicleTypeByPurpose{
-    public ElectricalType(String attribute) {
-        super(attribute);
-    }
+public class ElectricalType extends VehicleTypeByFuelTypes{
 
     @Override
     public String getTypeName() {
-        return super.getTypeName();
+        return VehicleTypeEnum.ELECTRIC.name();
     }
 }

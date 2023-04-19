@@ -2,18 +2,9 @@ package com.company;
 
 public class VehicleTypeByPurpose extends VehicleType {
 
-    public VehicleTypeByPurpose(String attribute) {
+    public VehicleTypeByPurpose() {
         super("Vehicle type by purpose");
     }
-
-    public VehicleTypeByPurpose() {
-        super();
-    }
-
-
-//    public String getTypeName() {
-//        return VehicleTypeEnum.PASSENGER.name();
-//    }
 
 
     @Override
