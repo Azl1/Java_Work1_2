@@ -1,26 +1,18 @@
 package com.company;
 
 public class Main {
-    public static void main(String[] args) {
-        Book book = new Book("The Lord of the Rings");
+    AdsService adsService = new AdsService();
+    VehicleAd volvoAd = new VehicleAd("Volvo", "123", new PassengerType(),
+            new SedanType(), new PetrolType());
+    VehicleAd kamazAd = new VehicleAd("Kamaz", "45", new TruckType(),
+            new PickupType(), new DieselType());
 
-        BookMover fromAvailableStatusMover = new FromAvailableStatusMover();
-        fromAvailableStatusMover.moveToStatus(book, Status.BORROWED);
-        System.out.println(book.getTitle() +" " + book.getStatus());
-        System.out.println();
+    adsService.setAdList(new VehicleAd[] {volvoAd, kamazAd});
 
-        BookMover fromArchievedStatusMover = new FromArchievedStatusMover();
-        fromArchievedStatusMover.moveToStatus(book, Status.AVAILABLE);
-        System.out.println(book.getTitle() +" " + book.getStatus());
-        System.out.println();
+    adsService.filterByVehicleTypeByPurpose(new PassengerType());
 
-        BookMover fromBorrovedStatusMover = new FromBorrovedStatusMover();
-        fromBorrovedStatusMover.moveToStatus(book, Status.OVERDUED);
-        System.out.println(book.getTitle() +" " + book.getStatus());
-        System.out.println();
+    adsService.filterByVehicleTypeByPurpose(new TruckType());
 
-        BookMover fromOverduedStatusMover = new FromOverduedStatusMover();
-        fromOverduedStatusMover.moveToStatus(book, Status.ARCHIVED);
-        System.out.println(book.getTitle() +" " + book.getStatus());
-    }
+    //TODO Создайте объявление с типами CAR, SEDAN, PETROL и отфильтруйте объявления с бензиновым топливом
+
 }
