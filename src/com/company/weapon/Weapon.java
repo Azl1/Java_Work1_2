@@ -1,7 +1,7 @@
 package com.company.weapon;
 
 public class Weapon {
-    public void shot(String s) {
+    public void shot() {
     }
 
 }

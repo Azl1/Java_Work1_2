@@ -20,7 +20,7 @@ public class Player {
         };
     }
 
-    public int getSlotsCount(int i) {
+    public int getSlotsCount() {
         // length - позволяет узнать, сколько всего слотов с оружием у игрока
         return weaponSlots.length;
     }
@@ -29,12 +29,15 @@ public class Player {
         // TODO проверить на выход за границы
         // если значение slot некорректно, то
         // выйти из метода написав об этом в консоль
+        if (slot < getSlotsCount() && slot > -1) {
+            // Получаем оружие из выбранного слота
+            Weapon weapon = weaponSlots[slot];
+            // Огонь!
 
-        // Получаем оружие из выбранного слота
-        Weapon weapon = weaponSlots[slot];
-        // Огонь!
-        
-        weapon.shot("Пив-Пав!");
+            weapon.shot();
+        } else {
+            System.out.println("Внет оружия!");
+        }
     }
 
 
@@ -46,12 +49,18 @@ public class Player {
             System.out.format("У игрока %d слотов с оружием,"
                             + " введите номер, чтобы выстрелить,"
                             + " -1 чтобы выйти%n",
-                    player.getSlotsCount(scanner.nextInt())
+                    player.getSlotsCount()
 
             );
 
             int slot;
-
+            while (true) {
+                slot = scanner.nextInt();
+                if (slot == -1) {
+                    break;
+                }
+                player.shotWithWeapon(slot);
+            }
             // TODO главный цикл игры:
             // запрашивать номер с клавиатуры
             // с помощью scanner.nextInt(),
