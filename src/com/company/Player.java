@@ -36,7 +36,7 @@ public class Player {
 
             weapon.shot();
         } else {
-            System.out.println("Внет оружия!");
+            System.out.println("Нет оружия!");
         }
     }
 
