@@ -2,12 +2,14 @@ package com.company;
 
 public class Main {
     public static void main(String[] args) {
+        TaxService taxService = new TaxService();
+        Bill[] payments = new Bill[] {
+                // TODO создать платежи с различным типами налогообложения
 
-        Dog dog = new Dog();
-        dog.voice();
-        Cat cat = new Cat();
-        cat.voice();
-        Сow cow = new Сow();
-        cow.voice();
+        };
+        for (int i = 0; i < payments.length; ++i) {
+            Bill bill = payments[i];
+            bill.payTaxes();
+        }
     }
 }
