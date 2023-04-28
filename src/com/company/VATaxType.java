@@ -1,11 +1,14 @@
 package com.company;
 
+import java.math.BigDecimal;
+
 public class VATaxType extends TaxType{
 
-    double NDS = 0.18;
+    BigDecimal NDS = new BigDecimal("0.18");
+    // double NALOG = 0.13;
 
     @Override
-    public double calculateTaxFor(double amount) {
-        return amount * NDS;
+    public BigDecimal calculateTaxFor(BigDecimal bigDecimal) {
+        return NDS.multiply(bigDecimal);
     }
 }

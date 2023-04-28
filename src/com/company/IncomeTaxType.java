@@ -1,11 +1,14 @@
 package com.company;
 
-public class IncomeTaxType extends TaxType{
+import java.math.BigDecimal;
 
-    double progressive_tax = 0.15;
+public class IncomeTaxType extends TaxType{
+    BigDecimal progressive_tax = new BigDecimal("0.15");
+    // double NALOG = 0.13;
 
     @Override
-    public double calculateTaxFor(double amount) {
-        return amount * progressive_tax;
+    public BigDecimal calculateTaxFor(BigDecimal bigDecimal) {
+        return progressive_tax.multiply(bigDecimal);
+
     }
 }
