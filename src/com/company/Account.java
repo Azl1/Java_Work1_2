@@ -3,15 +3,15 @@ package com.company;
 public abstract class Account {
 
     public static void main(String[] args) {
-        Account account1 = (CheckingAccount) new CheckingAccount();
+
     }
 
     int amount;
-    Account account;
+
 
     public Account(int amount, Account account) {
         this.amount = amount;
-        this.account = account;
+       \
     }
 
     public int getAmount() {
