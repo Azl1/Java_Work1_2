@@ -12,6 +12,7 @@ public class SavingsAccount extends Account{
 
     @Override
     public void transfer(Account account, int amount) {
+        this.amount = this.amount - amount;
         System.out.println("Возможен перевод: " + this.amount);
     }
 
