@@ -11,23 +11,13 @@ public abstract class Account {
 
     public Account(int amount, Account account) {
         this.amount = amount;
-       \
+
     }
 
-    public int getAmount() {
-        return amount;
-    }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
 
     public void setAccount(Account account) {
-        this.account = account;
+
     }
 
     public abstract void pay(int amount);
