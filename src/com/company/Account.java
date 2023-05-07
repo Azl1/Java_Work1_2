@@ -9,9 +9,9 @@ public abstract class Account {
 
     }
 
-    public abstract void pay(Account account4, int amount);
-    public abstract void transfer(Account account, int amount);
-    public abstract void addMoney(Account account6, int amount);
+    public abstract void pay(int amount);
+    public abstract void transfer(int amount);
+    public abstract void addMoney( int amount);
 
 
 }
