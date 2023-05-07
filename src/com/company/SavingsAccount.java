@@ -6,7 +6,7 @@ public class SavingsAccount extends Account{
     }
 
     @Override
-    public void pay(int amount) {
+    public void pay(Account account4, int amount) {
         System.out.println("Оплата невозможна ");
     }
 
@@ -21,7 +21,7 @@ public class SavingsAccount extends Account{
     }
 
     @Override
-    public void addMoney(int amount) {
+    public void addMoney(Account account6, int amount) {
         this.amount += amount;
         System.out.println("Полполнение счета: " + this.amount);
     }

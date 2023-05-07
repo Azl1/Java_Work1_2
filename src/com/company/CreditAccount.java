@@ -6,7 +6,7 @@ public class CreditAccount extends Account{
     }
 
     @Override
-    public void pay(int amount) {
+    public void pay(Account account4, int amount) {
         if (this.amount > amount) {
             System.out.println("Вы пополнили " + amount);
             this.amount -= amount;
@@ -27,7 +27,7 @@ public class CreditAccount extends Account{
     }
 
     @Override
-    public void addMoney(int amount) {
+    public void addMoney(Account account6, int amount) {
         this.amount += amount;
         System.out.println("Полполнение счета: " + this.amount);
     }

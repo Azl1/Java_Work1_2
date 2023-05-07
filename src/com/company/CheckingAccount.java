@@ -7,7 +7,7 @@ public class CheckingAccount extends Account{
     }
 
     @Override
-    public void pay(int amount) {
+    public void pay(Account account4, int amount) {
         if (this.amount > amount) {
             System.out.println("Вы оплатили покупку на сумму " + amount);
             this.amount -= amount;
@@ -21,7 +21,6 @@ public class CheckingAccount extends Account{
     public void transfer(Account account, int amount) {
         if (this.amount > amount) {
             this.amount = this.amount - amount;
-            account.addMoney(amount);
             System.out.println("Возможен перевод: " + this.amount);
         } else {
             System.out.println("Недостаточно средств ");
@@ -29,7 +28,7 @@ public class CheckingAccount extends Account{
     }
 
     @Override
-    public void addMoney(int amount) {
+    public void addMoney(Account account6, int amount) {
         this.amount += amount;
         System.out.println("Полполнение счета: " + this.amount);
     }

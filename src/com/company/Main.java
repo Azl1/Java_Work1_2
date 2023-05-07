@@ -14,7 +14,7 @@ public class Main {
         Account account4 = new CreditAccount(12000);
         System.out.println(account3);
         System.out.println(account4);
-        account3.transfer(account4, 3000);
+        account3.pay(account4, 3000);
         System.out.println(account3);
         System.out.println(account4);
         System.out.println();
@@ -22,7 +22,7 @@ public class Main {
         Account account6 = new SavingsAccount(15000);
         System.out.println(account5);
         System.out.println(account6);
-        account5.transfer(account6, 5000);
+        account5.addMoney(account6, 5000);
         System.out.println(account5);
         System.out.println(account6);
     }
