@@ -1,8 +1,8 @@
 package com.company;
 
 public class CreditAccount extends Account{
-    public CreditAccount(int amount, Account account) {
-        super(amount, account);
+    public CreditAccount(int amount) {
+        super(amount);
     }
 
     @Override
@@ -18,18 +18,24 @@ public class CreditAccount extends Account{
 
     @Override
     public void transfer(Account account, int amount) {
-        this.amount = this.amount - amount;
-        System.out.println("Возможен перевод: " + this.amount);
+        if (this.amount > amount) {
+            this.amount = this.amount - amount;
+            System.out.println("Возможен перевод: " + this.amount);
+        } else {
+            System.out.println("Недостаточно средств ");
+        }
     }
 
     @Override
     public void addMoney(int amount) {
-        if (this.amount > amount) {
-            System.out.println("Вы пополнили " + amount);
-            this.amount -= amount;
-            System.out.println("Остаток на счете: " + this.amount);
-        }   else {
-            System.out.println("0 ");
-        }
+        this.amount += amount;
+        System.out.println("Полполнение счета: " + this.amount);
+    }
+
+    @Override
+    public String toString() {
+        return "CreditAccount{" +
+                "amount=" + amount +
+                '}';
     }
 }

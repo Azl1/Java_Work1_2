@@ -2,21 +2,10 @@ package com.company;
 
 public abstract class Account {
 
-    public static void main(String[] args) {
-
-    }
-
     int amount;
 
-
-    public Account(int amount, Account account) {
+    public Account(int amount ) {
         this.amount = amount;
-
-    }
-
-
-
-    public void setAccount(Account account) {
 
     }
 
