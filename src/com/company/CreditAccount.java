@@ -17,14 +17,16 @@ public class CreditAccount extends Account{
     }
 
     @Override
-    public void transfer(int amount) {
+    public void transfer(int schet, Account account, int amount) {
         if (this.amount > amount) {
             this.amount = this.amount - amount;
-            System.out.println("Возможен перевод: " + this.amount);
+            account.amount = account.amount + amount;
+            System.out.println("Произведен перевод с счета " + schet + " на счет " + account + " на сумму " + amount);
         } else {
             System.out.println("Недостаточно средств ");
         }
     }
+
 
     @Override
     public void addMoney(int amount) {
