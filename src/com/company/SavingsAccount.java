@@ -17,7 +17,7 @@ public class SavingsAccount extends Account{
         if (this.amount > amount) {
             this.amount = this.amount - amount;
             account.amount = account.amount + amount;
-            System.out.println("Произведен перевод с счета " + schet + " на счет " + account + " на сумму " + amount);
+            System.out.println("Произведен перевод с счета " + schet + " на счет " + account.schet + " на сумму " + amount);
         } else {
             System.out.println("Недостаточно средств ");
         }
