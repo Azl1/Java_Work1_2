@@ -1,8 +1,10 @@
 package com.company;
 
 public class CreditAccount extends Account{
-    public CreditAccount(int amount) {
-        super(amount);
+
+
+    public CreditAccount(int schet, int amount) {
+        super(schet, amount);
     }
 
     @Override
@@ -17,7 +19,7 @@ public class CreditAccount extends Account{
     }
 
     @Override
-    public void transfer(int schet, Account account, int amount) {
+    public void transfer( Account account, int amount) {
         if (this.amount > amount) {
             this.amount = this.amount - amount;
             account.amount = account.amount + amount;

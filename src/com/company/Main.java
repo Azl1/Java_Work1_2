@@ -2,11 +2,11 @@ package com.company;
 
 public class Main {
     public static void main(String[] args) {
-        Account account1 = new CheckingAccount(5000);
-        Account account2 = new CheckingAccount(10000);
+        Account account1 = new CheckingAccount(12312312,5000);
+        Account account2 = new CheckingAccount(1231231,10000);
         System.out.println(account1);
         System.out.println(account2);
-        account1.transfer(12312312, account2, 2000);
+        account1.transfer(account2, 2000);
         System.out.println(account1);
         System.out.println(account2);
         System.out.println();
