@@ -50,9 +50,4 @@ public class Contact {
                 '}';
     }
 
-    public void addContact(String input) {
-        System.out.println("Создать контакт (введите наименование и его номер или введите нет)");
-        String[] parts = input.split(" ", 2);
-        Contact user = new Contact(parts[0], parts[1]);
-    }
 }
