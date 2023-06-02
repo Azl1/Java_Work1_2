@@ -26,15 +26,15 @@ public class Main {
                 case ("2"):
                     phoneBook.addContact();
                     break;
-//                case ("3"):
-//                    phoneBook.addContactDifferentGroup();
-//                    break;
-//                case ("4"):
-//                    phoneBook.SearchContactsGroup();
-//                    break;
-//                case ("5"):
-//                    phoneBook.SearchContactsNumber();
-//                    break;
+                case ("3"):
+                    phoneBook.addGroup();
+                    break;
+                case ("4"):
+                    phoneBook.findFromGroup();
+                    break;
+                case ("5"):
+                    phoneBook.findNumber();
+                    break;
             }
 
         }

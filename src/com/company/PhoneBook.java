@@ -15,17 +15,76 @@ public class PhoneBook {
         System.out.println("Создать группу контактов (введите по форме: Имя Номер Группа)?");
         String input = scanner.nextLine();
         String [] parse = input.split(" ");
-        Contact contact = new Contact(parse[0], parse[1]);
-        ArrayList<Contact> contacts = hashMap.get(parse[2]);
+        String name = parse[0];
+        String number = parse[1];
+        String group = parse[2];
+        Contact contact = new Contact(name, number);
+        addInGroup(group, contact);
+        printContactGroup();
+//        groups.add(input);
+    }
+
+    public void addGroup(){
+        System.out.println("Создать группу контактов (введите по форме: Группа)?");
+        String input = scanner.nextLine();
+        String group = input;
+        if (hashMap.get(group) == null) {
+            hashMap.put(group, new ArrayList<Contact>());
+        }
+        printContactGroup();
+    }
+
+    public void findNumber() {
+        System.out.println("Поиск номера телефона ");
+        String input = scanner.nextLine();
+        String number = input;
+        for (String name : hashMap.keySet()) {
+            System.out.println(name);
+            for (Contact contact : hashMap.get(name)){
+                if (contact.number.equals(number)) {
+                    System.out.println(contact);
+                }
+            }
+        }
+        printContactGroup();
+    }
+
+    public void findFromGroup() {
+        System.out.println("Поиск группы ");
+        String input = scanner.nextLine();
+        String group = input;
+        ArrayList<Contact> groupContact = hashMap.get(group);
+        if (groupContact == null) {
+            for (Contact contact : groupContact) {
+                System.out.println(contact);
+            }
+        } else {
+            System.out.println("Нет номер ");
+        }
+        printContactGroup();
+    }
+    public void addInGroups() {
+        System.out.println("Создать группу контактов (введите по форме: Имя Номер Группа через пробел)?");
+        String input = scanner.nextLine();
+        String [] parse = input.split(" ");
+        String name = parse[0];
+        String number = parse[1];
+        Contact contact = new Contact(name, number);
+        for (int i = 2; i < parse.length; i++) {
+            addInGroup(parse[i], contact);
+        }
+        printContactGroup();
+    }
+    public void addInGroup(String group, Contact contact) {
+        ArrayList<Contact> contacts = hashMap.get(group);
         if(contacts != null) {
-            hashMap.get(parse[2]).add(contact);
+            hashMap.get(group).add(contact);
         } else {
             ArrayList <Contact> newContacts = new ArrayList<>();
             newContacts.add(contact);
-            hashMap.put(parse[2], newContacts);
+            hashMap.put(group, newContacts);
         }
         printContactGroup();
-//        groups.add(input);
     }
 
     public void addContact() {
@@ -34,29 +93,16 @@ public class PhoneBook {
         String [] parse = input.split(" ");
         String name = parse[0];
         String number = parse[1];
-//        String group = parse[2];
         Contact contact = new Contact(name, number);
- //       ArrayList<Contact> contacts = hashMap.get(parse[2]);
-//        if(contacts != null) {
-//            hashMap.get(parse[2]).add(contact);
-//        } else {
-//            ArrayList <Contact> newContacts = new ArrayList<>();
-//            newContacts.add(contact);
-//            hashMap.put(parse[2], newContacts);
-//        }
-        printContact(name);
+        addInGroup(" ", contact);
 
+       printContactGroup();
     }
 
-    public void printContact(String name) {
-        for (String name1 : hashMap.keySet()) {
-            System.out.println(name1);
-            for (Contact contact : hashMap.get(name)) {
-                System.out.println(contact);
 
-            }
-        }
-    }
+
+
+
 
     public void printContactGroup() {
         for (String name : hashMap.keySet()) {
