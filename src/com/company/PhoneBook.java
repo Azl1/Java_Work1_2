@@ -46,7 +46,6 @@ public class PhoneBook {
                 }
             }
         }
-        printContactGroup();
     }
 
     public void findFromGroup() {
@@ -54,14 +53,13 @@ public class PhoneBook {
         String input = scanner.nextLine();
         String group = input;
         ArrayList<Contact> groupContact = hashMap.get(group);
-        if (groupContact == null) {
+        if (groupContact != null) {
             for (Contact contact : groupContact) {
                 System.out.println(contact);
             }
         } else {
             System.out.println("Нет номер ");
         }
-        printContactGroup();
     }
     public void addInGroups() {
         System.out.println("Создать группу контактов (введите по форме: Имя Номер Группа через пробел)?");
@@ -84,7 +82,6 @@ public class PhoneBook {
             newContacts.add(contact);
             hashMap.put(group, newContacts);
         }
-        printContactGroup();
     }
 
     public void addContact() {
