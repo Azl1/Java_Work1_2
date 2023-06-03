@@ -27,7 +27,7 @@ public class Main {
                     phoneBook.addContact();
                     break;
                 case ("3"):
-                    phoneBook.addGroup();
+                    phoneBook.addInGroups();
                     break;
                 case ("4"):
                     phoneBook.findFromGroup();
