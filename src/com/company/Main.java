@@ -3,38 +3,52 @@ package com.company;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Set<Student> hashSet = new HashSet();
+        Wishlist wishlist = new Wishlist();
+        TreeSet<Wishlist> treeSet = new TreeSet<>();
 
         while (true) {
             try {
-                System.out.println("Введите информацию о студенте: \"ФИО, номер группы, номер студенческого билета\"");
+                System.out.println("Выберите тип сортировки для Wishlist\n" +
+                        "1. Сортировка по убыванию цены\n" +
+                        "2. Сортировка по возрастанию цены\n" +
+                        "3. Сортировка по приоритету от самого важного\n" +
+                        "4. Сортировка по приоритету от низкого приоритета\n");
+                System.out.println("Введите идентификатор сортировки:");
                 String input = scanner.nextLine();
                 if ("end".equals(input)) {
-                    System.out.println("Список студентов:");
-                    printSetStudent(hashSet);
+                    System.out.println("Ваш список:");
+                    printWishlist(treeSet);
                 }
-                String[] parse = input.split(", ");
-                String name = parse[0];
-                String group = parse[1];
-                String studentId = parse[2];
-                Student student = new Student(name, group, studentId);
-                hashSet.add(student);
-                System.out.println(student);
-                } catch (Exception e) {
+
+                switch (input) {
+                    case ("1"):
+                sortByPriceDescending();
+                    break;
+                    case ("2"):
+                sortByPriceAscending();
+                        break;
+                    case ("3"):
+                sortByPriorityFromMostImportant();
+                        break;
+                    case ("4"):
+                sortByPriorityFromLowPriority();
+                        break;
+                }
+            } catch (Exception e) {
                 System.out.println("Неверно введены данные");
             }
-
         }
     }
 
-    static void printSetStudent(Set<Student> hashSet ){
-        for (Student student: hashSet) {
-            System.out.println(student);
+    static void printWishlist(Set<Wishlist> wishlists ){
+        for (Wishlist wishlist: wishlists) {
+            System.out.println(wishlist);
         }
     }
 }
