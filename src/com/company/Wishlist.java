@@ -7,8 +7,6 @@ import java.util.Set;
 
 public class Wishlist {
 
-    Scanner scanner = new Scanner(System.in);
-
 
     String name;
     String shortDescription;
