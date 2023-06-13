@@ -78,24 +78,14 @@ public class Wishlist {
         return Objects.hash(name, shortDescription, price, URLAddress, priority);
     }
 
-    public void sortByPriceDescending(){
-        System.out.println("Введите что бы вы хотели купить (введите END для выхода):");
-        String input = scanner.nextLine();
-        String[] parse = input.split(", ");
-        String name = parse[0];
-        String shortDescription = parse[1];
-        String price = parse[2];
-        String URLAddress = parse[3];
-        String priority = parse[4];
+    @Override
+    public String toString() {
+        return "Wishlist{" +
+                "name='" + name + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
+                ", price=" + price +
+                ", URLAddress='" + URLAddress + '\'' +
+                ", priority=" + priority +
+                '}';
     }
-    public void sortByPriceAscending(){
-
-    }
-    public void sortByPriorityFromMostImportant(){
-
-    }
-    public void sortByPriorityFromLowPriority(){
-
-    }
-
 }
