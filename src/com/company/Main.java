@@ -1,70 +1,56 @@
 package com.company;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
 
-    static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
 
             try {
-                System.out.println("Выберите тип сортировки для Wishlist\n" +
-                        "1. Сортировка по убыванию цены\n" +
-                        "2. Сортировка по возрастанию цены\n" +
-                        "3. Сортировка по приоритету от самого важного\n" +
-                        "4. Сортировка по приоритету от низкого приоритета\n");
-                System.out.println("Введите идентификатор сортировки:");
+                System.out.println("Введите информацию о кандидате (для завершения введите пустую строку):");
                 String input = scanner.nextLine();
-
                 switch (input) {
                     case ("1"):
-                TreeSet<Wishlist> treeSet1 = new TreeSet<>(Comparator.comparing(Wishlist::getPrice, Comparator.reverseOrder()));
+                TreeSet<Candidate> treeSet1 = new TreeSet<>(Comparator.comparing(Candidate::getResumeRelevance, Comparator.reverseOrder()), Comparator.comparing(Candidate :: getAssessment, Comparator.reverseOrder()));
                 addItem(treeSet1);
                     break;
                     case ("2"):
-                TreeSet<Wishlist> treeSet2 = new TreeSet<>(Comparator.comparing(Wishlist::getPrice));
+                TreeSet<Candidate> treeSet2 = new TreeSet<>(Comparator.comparing(Candidate::getResumeRelevance), Comparator.comparing(Candidate :: getAssessment));
                 addItem(treeSet2);
                         break;
-                    case ("3"):
-                TreeSet<Wishlist> treeSet3 = new TreeSet<>(Comparator.comparing(Wishlist::getPriority, Comparator.reverseOrder()));
-                addItem(treeSet3);
-                        break;
-                    case ("4"):
-                TreeSet<Wishlist> treeSet4 = new TreeSet<>(Comparator.comparing(Wishlist::getPriority));
-                addItem(treeSet4);
-                        break;
+
                 }
             } catch (Exception e) {
                 System.out.println("Неверно введены данные");
         }
     }
-    public static void addItem(TreeSet<Wishlist> treeSet) {
+    public static void addItem(TreeSet<Candidate> treeSet) {
+        Scanner scanner = new Scanner(System.in);
         while (true) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Введите что бы вы хотели купить (введите END для выхода):");
-            System.out.println("Название");
+            System.out.println("Фамилия Имя Отчество, пол, возраст, релевантность резюме, оценка на собеседовании: ПО ПРИМЕРУ");
             String name = scanner.nextLine();
-            if(name.equals("END")){
+            if(name.equals("")){
                 printWishlist(treeSet);
                 break;
+            } else {
+                String[] parse = name.split(",");
+                String names = parse[0];
+                String genderOfAPerson = parse[1];
+                String age = parse[2];
+                String resumeRelevance = parse[3];
+                String assessment = parse[4];
+                treeSet.add(new Candidate(names, genderOfAPerson, age, Integer.parseInt(resumeRelevance), Integer.parseInt(assessment)));
             }
-            System.out.println("Короткое название");
-            String shortDescription = scanner.nextLine();
-            System.out.println("Цена в рублях");
-            String price = scanner.nextLine();
-            System.out.println("Где купить");
-            String URLAddress = scanner.nextLine();
-            System.out.println("Приоритет важности");
-            String priority = scanner.nextLine();
-            treeSet.add(new Wishlist(name, shortDescription, Double.parseDouble(price), URLAddress, Integer.parseInt(priority)));
-
         }
     }
-    static void printWishlist(Set<Wishlist> wishlists ){
-        for (Wishlist wishlist: wishlists) {
-            System.out.println(wishlist);
+    static void printWishlist(Set<Candidate> candidates ){
+        for (Candidate candidate: candidates) {
+            System.out.println(candidate);
         }
     }
 }
