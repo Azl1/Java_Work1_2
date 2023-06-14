@@ -10,6 +10,9 @@ public class Candidate {
     int resumeRelevance;
     int assessment;
 
+    public Candidate() {
+    }
+
     public Candidate(String name, String genderOfAPerson, String age, int resumeRelevance, int assessment) {
         this.name = name;
         this.genderOfAPerson = genderOfAPerson;
@@ -18,10 +21,7 @@ public class Candidate {
         this.assessment = assessment;
     }
 
-    public Candidate(int resumeRelevance, int assessment) {
-        this.resumeRelevance = resumeRelevance;
-        this.assessment = assessment;
-    }
+
 
     public String getName() {
         return name;
