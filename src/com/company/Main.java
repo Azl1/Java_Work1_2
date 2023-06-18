@@ -14,13 +14,10 @@ public class Main {
             try {
                 System.out.println("Введите информацию о кандидате (для завершения введите пустую строку):");
                 String input = scanner.nextLine();
-                switch (input) {
-                    case ("1"):
+
                 TreeSet<Candidate> treeSet1 = new TreeSet<>(Comparator.comparing(Candidate::getResumeRelevance, Comparator.reverseOrder()).thenComparing(Candidate :: getAssessment, Comparator.reverseOrder()));
                 addItem(treeSet1);
-                    break;
 
-                }
             } catch (Exception e) {
                 System.out.println("Неверно введены данные");
         }
