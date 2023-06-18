@@ -10,7 +10,7 @@ public class Main {
  // TreeSet<Candidate> treeSet2 = new TreeSet<>(Comparator.comparing(Candidate::getResumeRelevance), Comparator.comparing(Candidate :: getAssessment));
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+
             try {
                 System.out.println("Введите информацию о кандидате (для завершения введите пустую строку):");
                 TreeSet<Candidate> treeSet1 = new TreeSet<>(Comparator.comparing(Candidate::getResumeRelevance, Comparator.reverseOrder()).thenComparing(Candidate :: getAssessment, Comparator.reverseOrder()));
