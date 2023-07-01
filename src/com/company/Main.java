@@ -1,18 +1,17 @@
 package com.company;
 
-import java.util.Comparator;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
+ //       Set<Contacts> contacts2 = new HashSet<>();
         Scanner scanner = new Scanner(System.in);
         Contacts contacts = new Contacts();
+//        Contact contact = new Contact();
         MissedCalls missedCalls = new MissedCalls();
 
-
+        while (true) {
             try {
                 System.out.println("Меню:\n" +
                         "1. Добавить контакт\n" +
@@ -22,31 +21,33 @@ public class Main {
                         "5. Выход\n" +
                         "Выберите пункт из меню (1-4):");
                 String input2 = scanner.nextLine();
-                switch (input2){
-                    case ("1"):
-                    contacts.addingContact();
+
+                if ("5".equals(input2)) {
+//                    System.out.println("Список доавленных контактов ");
+//                    contacts.printContacts(contacts2);
                     break;
+                }
+                switch (input2) {
+                    case ("1"):
+                        contacts.addingContact();
+                        break;
 
                     case ("2"):
-                    missedCalls.addMissedCall(contacts);
+                        missedCalls.addMissedCall(scanner.nextLine());
                         break;
 
                     case ("3"):
-                   missedCalls.printMissedCall();
+                        missedCalls.printMissedCall();
                         break;
 
                     case ("4"):
-                    missedCalls.clearMissedCall();
-                        break;
-
-                    case ("5"):
-                        contacts.exit();
+                        missedCalls.clearMissedCall();
                         break;
                 }
 
             } catch (Exception e) {
                 System.out.println("Неверно введены данные");
+            }
         }
     }
-
 }

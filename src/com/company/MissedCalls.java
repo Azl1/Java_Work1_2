@@ -2,14 +2,15 @@ package com.company;
 
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.TreeMap;
 
 public class MissedCalls {
 
     Map<LocalDateTime, String> missedCalls = new TreeMap<>();
 
-    public void addMissedCall(Contacts phone) {
-        missedCalls.put(LocalDateTime.now(), String.valueOf(phone));
+    public void addMissedCall(String phone) {
+        missedCalls.put(LocalDateTime.now(), phone);
         System.out.println("Добавлен ");
     }
 

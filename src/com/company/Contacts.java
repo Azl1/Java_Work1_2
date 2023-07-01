@@ -16,9 +16,10 @@ public class Contacts {
             String names = parse[0];
             String surname = parse[1];
             String phoneNumber = parse[2];
-            Group contactGroup = Group.valueOf(parse[3]);
+            String contactGroup = parse[3];
             //contacts.put(getnew Contact(names, surname, phoneNumber, contactGroups));
-            contacts.put(names, new Contact(names, surname, phoneNumber, contactGroup));
+            Contact contact = new Contact(names, surname, phoneNumber, contactGroup);
+            contacts.put(name, contact);
             String input = scanner.nextLine();
 
             Group group;
@@ -39,21 +40,10 @@ public class Contacts {
         }
     }
 
-    public void exit(){
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        if (name.equals("")) {
-            printContacts((Set<Contacts>) contacts);
-            System.out.println("Выход ");
-        }
-
-    }
-
     @Override
     public String toString() {
         return "Contacts{" +
-                "contacts=" + contacts +
-                '}';
+                "contacts=" + contacts + '}';
     }
 
     static void printContacts(Set<Contacts> contacts ){

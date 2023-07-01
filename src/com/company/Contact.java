@@ -5,9 +5,11 @@ public class Contact {
     String name;
     String surname;
     String phone;
-    Group group;
+    String group;
 
-    public Contact(String name, String surname, String phone, Group group) {
+    public Contact() {
+    }
+    public Contact(String name, String surname, String phone, String group) {
         this.name = name;
         this.surname = surname;
         this.phone = phone;
