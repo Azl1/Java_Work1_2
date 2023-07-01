@@ -11,23 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Contacts contacts = new Contacts();
         MissedCalls missedCalls = new MissedCalls();
-        String input = scanner.nextLine();
 
-        Group group;
-        switch (input){
-            case "Семья":
-                group = Group.FAMILY;
-                break;
-            case "Работа":
-                group = Group.WORK;
-                break;
-            case "Друзья":
-                group = Group.FRIENDS;
-                break;
-            default:
-                group = Group.NO_GROUP;
-        }
-        System.out.println(group);
 
             try {
                 System.out.println("Меню:\n" +
@@ -56,7 +40,7 @@ public class Main {
                         break;
 
                     case ("5"):
-                        contacts.addingContact();
+                        contacts.exit();
                         break;
                 }
 
