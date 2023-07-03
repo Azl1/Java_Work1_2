@@ -16,5 +16,9 @@ public class Contact {
         this.group = group;
     }
 
-
+    public Contact(String name, String surname, String phone) {
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+    }
 }

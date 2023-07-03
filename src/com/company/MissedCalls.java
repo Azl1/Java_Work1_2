@@ -7,11 +7,14 @@ import java.util.TreeMap;
 
 public class MissedCalls {
 
+    Scanner scanner = new Scanner(System.in);
     Map<LocalDateTime, String> missedCalls = new TreeMap<>();
 
-    public void addMissedCall(String phone) {
-        missedCalls.put(LocalDateTime.now(), phone);
-        System.out.println("Добавлен ");
+    public void addMissedCall() {
+            System.out.println("Введите номер пропущенного вызова");
+            String phone = scanner.nextLine();
+            missedCalls.put(LocalDateTime.now(), phone);
+            System.out.println("Добавлен ");
     }
 
     void printMissedCall(){

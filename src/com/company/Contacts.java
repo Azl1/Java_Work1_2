@@ -37,6 +37,7 @@ public class Contacts {
                     group = Group.NO_GROUP;
             }
             System.out.println(group);
+            System.out.println("Добавлен");
         }
     }
 

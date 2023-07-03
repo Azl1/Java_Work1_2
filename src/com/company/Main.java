@@ -33,7 +33,8 @@ public class Main {
                         break;
 
                     case ("2"):
-                        missedCalls.addMissedCall(scanner.nextLine());
+
+                        missedCalls.addMissedCall();
                         break;
 
                     case ("3"):
