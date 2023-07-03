@@ -39,6 +39,7 @@ public class Main {
 
                     case ("3"):
                         missedCalls.printMissedCall();
+
                         break;
 
                     case ("4"):

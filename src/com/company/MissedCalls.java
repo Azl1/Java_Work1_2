@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.TreeMap;
 
 public class MissedCalls {
-
+    Contacts contacts = new Contacts();
     Scanner scanner = new Scanner(System.in);
     Map<LocalDateTime, String> missedCalls = new TreeMap<>();
 
@@ -19,7 +19,12 @@ public class MissedCalls {
 
     void printMissedCall(){
         for (Map.Entry<LocalDateTime, String> missedCall : missedCalls.entrySet()) {
-            System.out.println(missedCall.getKey() + " " + missedCall.getValue());
+            String fio = contacts.getContactF10(missedCall.getValue());
+            if (fio != null) {
+                System.out.println(missedCall.getKey() + " " + fio);
+            } else {
+                System.out.println(missedCall.getKey() + " " + missedCall.getValue());
+            }
         }
     }
 
