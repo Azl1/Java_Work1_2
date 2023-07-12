@@ -20,7 +20,12 @@ public class User {
     public User() {
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Мошейник{" +
+                "его id=" + id +
+                ", ФИО мошейника='" + fio + '\'' +
+                ", адрес вычесленный по ip ='" + address + '\'' +
+                '}';
+    }
 }

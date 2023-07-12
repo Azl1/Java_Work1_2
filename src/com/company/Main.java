@@ -21,7 +21,7 @@ public class Main {
                 if (line.contains("ip;id;fio;address")) {
                     continue;
                 }
-                System.out.println(line);
+             //   System.out.println(line);
                 String[] parse = line.split(";");
                 String ip = parse[0];
                 int id = Integer.parseInt(parse[1]);
@@ -52,10 +52,22 @@ public class Main {
 
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+           throw new RuntimeException();
         }
 
-        System.out.println(serverLogs);
+        System.out.println(max());
+        String ipBadBoy = max();
+
+        int idBadBoy = 0;
+        for (Map.Entry<Integer, Set<String>> i : usersIp.entrySet()) {
+            for (String ip : i.getValue()){
+                if(ip.equals(ipBadBoy)) {
+                    idBadBoy = i.getKey();
+                }
+            }
+        }
+
+        System.out.println(userMap.get(idBadBoy));
     }
 
     public static String max() {
